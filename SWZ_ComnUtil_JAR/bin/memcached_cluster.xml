@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memcached>
+	<client name="mclient0" compressEnable="true" defaultEncoding="UTF-8" socketpool="pool0">
+		<errorHandler>com.bqd.soa2.esb.cache.memcached.MemcachedErrorHandler
+		</errorHandler>
+	</client>
+	<client name="mclient0-bck" compressEnable="true" defaultEncoding="UTF-8" socketpool="pool0-bck">
+		<errorHandler>com.bqd.soa2.esb.cache.memcached.MemcachedErrorHandler
+		</errorHandler>
+	</client>
+	<socketpool name="pool0" failover="true" initConn="5" minConn="5" maxConn="250" maintSleep="5000" nagle="false" socketTO="3000"
+		aliveCheck="true">
+		<servers>192.168.1.230:33001,192.168.1.225:33001,192.168.1.205:33001</servers>
+		
+		<!-- 
+		/usr/local/memcached/bin/memcached -d -u root -m 256 192.168.1.205 -p 33001
+		 -->
+	</socketpool>
+	<socketpool name="pool0-bck" failover="true" initConn="5" minConn="5" maxConn="250" maintSleep="5000" nagle="false" socketTO="3000"
+		aliveCheck="true">
+		<servers>192.168.1.213:33001,192.168.1.230:33002,192.168.1.230:33003</servers>
+	</socketpool>
+
+	<cluster name="cluster1" mode="active">
+		//mode = active,standby
+		<memCachedClients>mclient0,mclient0-bck</memCachedClients>
+	</cluster>
+</memcached>

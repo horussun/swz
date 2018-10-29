@@ -1,0 +1,14 @@
+.Search {
+	height: 67px;
+	background-color: #e4e4e4;
+	border-top: #ccc solid 1px;
+	border-bottom: #CCC solid 1px;
+}
+
+.searcher {
+	float: left;
+}
+
+.searchbtn {
+	//float: left;
+}

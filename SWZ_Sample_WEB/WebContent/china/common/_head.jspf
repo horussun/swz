@@ -1,0 +1,77 @@
+<%@ page language="java" isELIgnored="false" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- Include Tag common jspf --%>
+<%@ include file="_tag.jspf" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Style Sheet -->
+<STYLE type="text/css">
+@import "${pageContext.request.contextPath}/china/css/style.css?v=0.0.0";
+@import "${pageContext.request.contextPath}/china/css/sdstyle.css?v=0.0.0";
+@import "${pageContext.request.contextPath}/china/css/dialogs.css?v=0.0.0";
+@import "${pageContext.request.contextPath}/javascript/dojo16/dojo/resources/dojo.css?v=0.0.0";
+@import "${pageContext.request.contextPath}/javascript/dojo16/dijit/themes/sl/sl.css?v=0.0.0";
+</STYLE>
+<SCRIPT type="text/javascript">
+	window.contextRoot = "${pageContext.request.contextPath}";
+	window.actionPath = window.contextRoot + "/b2bhub";
+	window.userId="${role.userId}";
+</SCRIPT>
+<%--Include Dojo --%>
+<SCRIPT type="text/javascript" 
+	data-dojo-config="isDebug: false, parseOnLoad: true, locale: '<%="zh"%>'"
+	src="${pageContext.request.contextPath}/javascript/dojo16/dojo/dojo.js?v=0.0.0">
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+function setConsoleLogLevel(level) {
+    var logLevel = level || "all";
+
+    if (console) {
+        switch (logLevel) {
+        case "none":
+        	console.dir = function() {};
+            console.error = function() {};
+            // fall-through
+        case "error":
+            console.warn = function() {};
+            // fall-through
+        case "warn":
+            console.log = function() {};
+            // fall-through
+        case "info":
+            console.debug = function() {};
+            // fall-through
+        case "debug":
+            console.log = function() {};
+            // fall-through
+        case "log":
+            // fall-through
+        case "all":
+            // fall-through
+        default:
+            // empty
+        }
+    }
+}
+<%-- RELEASE(不要更改以下这行的内容): Following all will be replaced with "none"--%>
+var logLevel="all";
+setConsoleLogLevel(logLevel);
+
+dojo.registerModulePath("tms.china", "../../../china");
+</SCRIPT>
+<SCRIPT type="text/javascript"
+	<%-- RELEASE(不要更改以下这行的内容): Following loader.js will be replaced with "dojo16/dojo/tmschina.js?v=0.0.0"--%>
+	src="${pageContext.request.contextPath}/javascript/loader.js?v=0.0.0">
+</SCRIPT>
+<%-- China TMS common javascript --%>
+<SCRIPT type="text/javascript" src="${pageContext.request.contextPath}/china/js/common.js?v=0.0.0"></SCRIPT>
+<SCRIPT type="text/javascript"
+	 src="${pageContext.request.contextPath}/china/js/context.js?v=0.0.0">
+</SCRIPT>
+<%-- title logo picture --%>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico?v=0.0.0" />
+<TITLE><fmt:message key="tms.china.app.title" bundle="${ClientStrings}"/></TITLE>
+</HEAD>

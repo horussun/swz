@@ -1,0 +1,48 @@
+
+/*body{
+	margin:0;
+	padding:0;
+	font-family:Arial,YouYuan,SimSun,sans-serif !important;
+	background: -moz-linear-gradient(top , #01081e, #020d32) ;
+	background: -webkit-gradient(linear, left top, left bottom, from(#01081e), to(#020d32));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#01081e', endColorstr='#020d32');
+	background-color:#020d32;
+	overflow:hidden !important;
+	}
+*/
+.clearfix:before, .clearfix:after { content: "";   display: table;}
+.clearfix:after { clear: both;}
+.clearfix { display:table;}  
+/*.page{background:url(../images/light.png) no-repeat; height:800px;}*/
+.ibmlogo{height:50px;text-align:right;padding:15px 40px 0 0;}
+.loginmain{margin:0 auto;width:700px;height:300px;margin-top:8%;}
+.sllogo{ margin-top:15%;float:left;}
+.outer2{float:right;border:1px solid #494f64;width:100%;height:30px;	border-radius:5px;	background:url(../images/login_box.png) repeat 0 0 transparent;	}
+.outer{float:right;border:1px solid #494f64;width:420px;height:300px;	border-radius:5px;	background:url(../images/login_box.png) repeat 0 0 transparent;	}
+.infomessage{border-bottom:1px solid #494f64;padding-left:27px;	color:#d2ebfa;	font-size:14px;	}
+.infomessage p{margin-top:13px;margin-bottom:15px;line-height:25px;	}
+.righttext{ color:#d2ebfa;   }
+.errortext{ color:#f6cdcd;   }
+.enterinfo{	margin:0 auto;color:#000;	}
+.enterinfo label{font-size:14px;color:#d2ebfa;}
+.enterinf a{	text-decoration:none;color:#306fa8;	}
+.enterinf a:hover{text-decoration:underline;	color:#4e9a48;	}
+.enterinfo td{padding-bottom:7px;}
+.loginarea{padding:10px 22px 0px 8px;height:45px;}
+.left{float:left;color:#d2ebfa;	margin-top:-3px;line-height:18px;padding-left:20px;	}
+.left label{font-size:11px;	}
+.right{float:right;	margin-top:3px;padding-right:30px;}
+.sl .enterinfo .dijitTextBox{width:320px;height:28px;border-radius:3px;padding-left:4px;font-size:14px;	}
+.sl .enterinfo .dijitInputInner	{padding-top:4px;}
+.sl .enterinfo .dijitTextBox .dijitValidationContainer{padding:5px 0;}
+.dj_ie .sl .enterinfo .dijitTextBox .dijitInputInner,.dj_gecko .sl .enterinfo .dijitTextBox .dijitInputInner,.dj_webkit .sl .enterinfo .dijitTextBox .dijitInputInner{padding:4px 0;  }
+.enterinfo .dijitPlaceHolder{font-style:normal;	top:4px;}
+
+/*------------------forgot password----------------*/
+.enterinfo a{color:#306fa8;	line-height:20px;text-decoration:none; }
+.enterinfo a:hover{text-decoration:underline;color:#4e9a48; }
+.left2{	padding-left:26px;	padding-top:23px;}
+.right2{line-height:50px;padding-right:26px;}
+.sl .activebt .dijitButton .dijitButtonNode{background-image:url(../images/activebt.png);color:#fff;	border:1px solid #366ba4;	}
+.sl .passivebt .dijitButton .dijitButtonNode{background-image:url(../images/passivebt.png);color:#fff;border:1px solid #3d3d3d;    }
+.sl .right .dijitButton .dijitButtonNode{width:60px;	}

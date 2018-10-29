@@ -1,0 +1,64 @@
+<table class="searcher" dojoAttachPoint="searchtable">		
+		<tr dojoAttachPoint="normal">
+			<th>订单编号：</th>
+			<td> 
+				<input type="text" dojoAttachPoint="orderNumber" dojoType="dijit.form.TextBox" name="findText" style="width:140px"/>
+			</td>
+			<th>产品名称：</th> 
+			<td class="shortselect">
+				<input type="text" dojoAttachPoint="pName" dojoType="dijit.form.TextBox" name="findText" style="width:140px"/>
+			</td>
+			<th>${_org}：</th> 
+			<td class="shortselect">
+				<input type="text" dojoAttachPoint="oName" dojoType="dijit.form.TextBox" name="findText" style="width:90px"/>
+			</td>
+			
+			<td class="shortselect">
+				<button type="button" dojoType="dijit.form.Button"  dojoAttachEvent="onClick:search" >搜索</button>
+			</td>
+			
+		</tr>
+		<tr dojoAttachPoint="transfer">
+			<th>单据类型：</th>
+			<td> 
+				<select dojoAttachPoint="oType" dojotype="dijit.form.Select" autoComplete="true" >
+					<option value="0">销售订单</option>
+					<option value="1">采购订单</option>
+					<option value="2">运输订单</option>
+				</select>
+			</td>
+			<th>订单来源：</th> 
+			<td class="shortselect">
+				<input type="text" dojoAttachPoint="oSource" dojoType="dijit.form.TextBox" name="findText" style="width:140px"/>
+			</td>
+			<th>订单目的：</th> 
+			<td class="shortselect">
+				<input type="text" dojoAttachPoint="oDest" dojoType="dijit.form.TextBox" name="findText" style="width:140px"/>
+			</td>
+			<th>开始时间：</th> 
+			<td class="shortselect">
+				<input type="text" dojotype="dijit.form.DateTextBox" dojoAttachPoint="oStartTime" name="oStartTime" />
+			</td>
+			<th>结束时间：</th> 
+			<td class="shortselect">
+				<input type="text" dojoAttachPoint="oEndTime" dojoType="dijit.form.DateTextBox" />
+			</td>
+			<td class="shortselect">
+				<button type="button" dojoType="dijit.form.Button"  dojoAttachEvent="onClick:search" >搜索</button>
+			</td>
+		</tr>
+		<tr dojoAttachPoint="product">
+			<th>产品编号：</th>
+			<td> 
+				<input type="text" dojoAttachPoint="productID" dojoType="dijit.form.TextBox" name="findText" style="width:140px"/>
+			</td>
+			<th>产品名称：</th> 
+			<td class="shortselect">
+				<input type="text" dojoAttachPoint="productName" dojoType="dijit.form.TextBox" name="findText" style="width:140px"/>
+			</td>
+			
+			<td class="shortselect">
+				<button type="button" dojoType="dijit.form.Button"  dojoAttachEvent="onClick:search" >搜索</button>
+			</td>
+		</tr>
+</table>

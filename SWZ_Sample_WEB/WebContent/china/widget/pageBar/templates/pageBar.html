@@ -1,0 +1,21 @@
+ <div> 
+	<div class="pagination_left" dojoAttachPoint="searchDescription">搜索条件显示</div>
+	<div><label></label></div>
+	<div class="pagination_right">
+	          <div class="numitem">
+              	<label dojoAttachPoint="_pageDescription"></label>
+              	<label style="display:none" dojoAttachPoint="_dw">项</label>
+              </div> 
+              <div class="lastDisablebt paginationbt" dojoAttachPoint="last" dojoAttachEvent="onclick:_goLast"></div>
+              <div class="nextDisablebt paginationbt" dojoAttachPoint="next" dojoAttachEvent="onclick:_goNext"></div>
+              
+              <div class="currentpage total">/<label dojoAttachPoint="_totalPage">1</label>页</div>
+              <div class="numinput currentpage"><input dojotype="dijit.form.TextBox" value="1" dojoAttachPoint="goToPage" dojoAttachEvent="onChange:_goToPage"/></div>
+              
+              <div class="prevDisablebt paginationbt" dojoAttachPoint="pre" dojoAttachEvent="onclick:_goPre"></div>
+              <div class="firstDisablebt paginationbt" dojoAttachPoint="first" dojoAttachEvent="onclick:_goFirst"></div>           
+      </div>
+	
+ </div>
+ 
+ 

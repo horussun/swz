@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memcached>
+
+    <client name="mclient1" compressEnable="true" defaultEncoding="UTF-8" socketpool="pool1">
+        <errorHandler>com.bqd.soa2.esb.cache.memcached.MemcachedErrorHandler</errorHandler>
+    </client>
+    
+    <socketpool name="pool1" failover="true" initConn="5" minConn="5" maxConn="250" maintSleep="0"
+        nagle="false" socketTO="3000" aliveCheck="true"><!--
+        <servers>127.0.0.1:11211</servers>
+        --><servers>127.0.0.1:11211</servers>
+    </socketpool> 
+  	
+  	<cluster name="cluster1">
+        <memCachedClients>mclient1</memCachedClients>
+    </cluster>
+    
+  	<!--
+  	<client name="mclient0" compressEnable="true" defaultEncoding="UTF-8" socketpool="pool0">
+        <errorHandler>com.bqd.soa2.esb.cache.memcached.MemcachedErrorHandler</errorHandler>
+    </client>
+
+    <socketpool name="pool0" failover="true" initConn="5" minConn="5" maxConn="250" maintSleep="0"
+        nagle="false" socketTO="3000" aliveCheck="true">
+        <servers>127.0.0.1:11211</servers>
+    </socketpool>
+
+    <cluster name="cluster" mode="active">
+        <memCachedClients>mclient0,mclient1</memCachedClients>
+    </cluster>
+    -->
+                    
+</memcached>

@@ -1,0 +1,3 @@
+set CLASSPATH=.\bin;.\lib\commons-beanutils-1.8.3.jar;.\lib\commons-collections-3.2.1.jar;.\lib\commons-configuration-1.6.jar;.\lib\commons-io-2.0.1.jar;.\lib\commons-lang-2.6.jar;.\lib\commons-lang3-3.0.1.jar;.\lib\commons-logging-1.1.1.jar;.\lib\db2jcc.jar;.\lib\db2jcc_license_cu.jar;.\lib\dom4j-1.6.1.jar;.\lib\httpasyncclient-4.0-beta2.jar;.\lib\httpclient-4.2.1.jar;.\lib\httpcore-4.2.1.jar;.\lib\httpcore-ab-4.2.1.jar;.\lib\httpcore-nio-4.2.1.jar;.\lib\junit-4.8.1.jar;.\lib\junitperf.jar;.\lib\log4j-1.2.16.jar;.\lib\xmlbeans-2.3.0.jar;
+REM java -Dfile.encoding=UTF-8 -Xms128m -Xmx256m org.junit.runner.JUnitCore com.bqd.TestData1
+D:\jdk1.6.0_14\bin\java -Dfile.encoding=UTF-8 -Xms128m -Xmx256m  com.bqd.TestData1

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+	
+    <!-- ========================= controller配置========================= -->
+	<!-- 自动装配controller -->
+	<context:component-scan base-package="lxh.fw.demo.web.controller"><!-- lxh.fw..**.web.controller -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+	<!-- 处理定义在method上的请求映射  -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	<!-- 处理定义在controller类上的请求映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+	
+	<!-- ========================= VIEW定义 ========================= -->
+	<!-- 按bean的名称返回同名的视图 -->
+	<bean id="beanNameResolver" class="lxh.fw.common.web.view.StrictBeanNameViewResolver" p:order="0"/>
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" p:order="1">
+	    <property name="ignoreAcceptHeader" value="true"/>
+	    <property name="favorPathExtension" value="false"/>
+	    <property name="favorParameter" value="false"/>
+	    <property name="parameterName" value="format"/>
+	    <property name="defaultContentType" value="text/html"/>
+	    <property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="xml" value="application/xml" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="viewResolvers">  
+             <list>  
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+                    <property name="contentType" value="text/html"/>
+                    <property name="prefix" value="/jsp/"/>
+                    <property name="suffix" value=".jsp"/>
+                </bean>
+            </list>  
+        </property>
+        <!--  
+        <property name="defaultViews">
+            <list>  
+                 <bean class="org.springframework.web.servlet.view.JstlView" p:url="/notfound"/>  
+            </list>  
+        </property>
+        -->
+	</bean>
+		 
+	<!-- 将请求对应到同名的bean上。eg: /system/user.do 会对应到名为 /system/user.do 的bean上。 -->
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	<!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+         <property name="contentType" value="text/html"/>
+         <property name="prefix" value="/jsp/"/>
+         <property name="suffix" value=".jsp"/>
+	</bean>
+	<!--  
+	<bean id="jsonView" class="lxh.fw.common.web.view.json.JsonView">
+		<property name="jsonWriter">
+			<bean class="lxh.fw.common.web.view.json.IBMJsonWriter"/>
+		</property>
+	</bean>
+	-->
+	<bean id="defaultJsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"/>
+	<!-- 文件上传相关 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="100000"/>
+        <property name="uploadTempDir" value="upload/temp"/>
+    </bean>
+	<!-- 异常解析类 -->
+	<!-- 
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	    <property name="exceptionMappings">
+	        <props>
+	            <prop key="org.springframework.dao.DataAccessException">error</prop>
+	            <prop key="org.springframework.transaction.TransactionException">error</prop>
+	            <prop key="java.sql.SQLException">error</prop>
+				<prop key="java.lang.RuntimeException">error</prop>
+	        </props>
+	    </property>
+	</bean>
+	-->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+              <props>
+                  <prop key="java.lang.Exception">error_all</prop>
+            </props>
+        </property>
+    </bean>
+    
+	<!-- 会自动注册了validator  ConversionService  -->
+    <mvc:annotation-driven validator="validator" conversion-service="conversion-service"/>
+    
+    <!-- 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册-->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass"  value="org.hibernate.validator.HibernateValidator"/>
+        <!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+    <bean id="conversion-service" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"  /> 
+	
+	<!-- 表示当访问主页时自动转发到index控制器 -->
+	<mvc:view-controller path="/" view-name="forward:/index"/>
+	<mvc:default-servlet-handler/>
+	
+</beans>

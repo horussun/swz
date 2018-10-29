@@ -1,0 +1,98 @@
+body{
+	 padding:0;
+	 margin:0;
+	 background-color:#c9c9c9;
+	 min-width:1024px; 
+	 overflow:auto !important;
+	 font-family:Arial,Microsoft YaHei,SimSun,sans-serif !important;
+	 }
+
+#header {
+    background: url("../images/headerback.png") repeat-x ;
+    height: 50px;
+	}
+
+#sllogo {
+    float: left;
+	}
+#ibmlogo{
+		float:right;
+		margin:10px 10px 0px 0px;
+	}
+	
+.headernormal{
+    background: url("../images/header2.png") repeat-x ;
+    height: 70px;
+	border-top:1px solid #84b5df;
+	padding-left:27px;
+	}
+.headererror{
+	background: url("../images/headererror.png") repeat-x ;
+    height: 70px;
+	padding-left:27px;
+	border-top:1px solid #84b5df;
+	}
+.headerstatus{
+	background: url("../images/headerstatus.png") repeat-x ;
+    height: 70px;
+	padding-left:27px;
+	border-top:1px solid #84b5df;
+	}
+#title1{
+    font-size: 16px;
+	font-weight: bold;
+	color:#ffffff;
+	padding:10px 0px 5px 0px;
+	}
+#title2{
+    font-size: 14px;
+	color:#ffffff;
+	margin:0px 0px 5px 0px;
+	padding-top:5px;
+	}
+
+.content{
+	background-color:#fff;
+	height:400px;
+	padding:100px 0 0; 
+	}
+.content table{
+    margin:0 auto;
+	}
+.content th{
+	text-align:right;
+	padding-right:7px;
+	font-size: 14px;
+	vertical-align:text-top;
+	padding-top:7px;
+	}
+.content td{
+	padding:7px 0;
+	}
+.content a{
+	text-decoration:none;
+	color:#00649d;
+	}
+.content a:hover{
+	text-decoration:underline;
+	}
+.content a label{
+    cursor:pointer;
+	}
+.logon{
+	text-align:center;
+	padding-top:5px;
+	 }
+	
+#footer{
+	text-align:center;
+	clear:both;
+	border-top:1px solid #bcbcbc;
+	color:#666666;
+    }
+
+.sl .logon .dijitButton .dijitButtonNode{
+	width:60px; 
+   }
+
+

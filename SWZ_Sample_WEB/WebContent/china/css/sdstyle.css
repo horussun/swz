@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+#infoarea #invoice th{width:auto;}
+#infoarea #invoice{height:430px;	width:98%;margin:0 auto;margin-top:5px;   }
+.invoiceinput{ margin: 20px 0px 10px 10px; 	}
+.invoiceinput th { width:12%; text-align:right; padding-right:7px;color:#454545;}
+#infoarea #shipnote {float:right; margin:20px 27px;	}
+.outerbar{ text-align:center;height:10px;}
+.outerbar a {text-decoration:none;font-family:SimHei,Microsoft YaHei,Arial;color:#00649d;}
+.outerbar img{padding:0 7px;	vertical-align:middle;	}
+.outerbar label{	font-size:14px;	font-family:SimHei,Microsoft YaHei,Arial;color:#333;	}
+.popupdriver{width:60%;	height:324px;border:1px #CCC solid;	margin:0 auto;background:#FFF;	}
+#title1{ height:24px;background:url(../images/pptop.png) repeat-x;	padding:5px 0px 5px 10px;font-size:16px;color:#00649d;	}
+#ppareadirver{height:260px; }
+#diverinfo{ margin:70px 0px 80px 230px;	}
+#diverinfo th{ float:right;  padding-right:10px;	}
+.fleet_shipment_grid{height:450px;padding-top:13px;	width:98%;margin:0 auto;}
+
+/*---------alerts_remove and alerts_removeAll-------*/
+.removeAlerts{width:400px; height:60px;}
+.removeAlerts p{ margin: 20px 0px 0px 40px;	}	
+
+/*-----------attachTracer-------*/
+.information { width:600px;	background-color:#eee;}
+.category{ padding: 10px  0px 0px 170px;	}
+.category th{ text-align:right; color:#454545;line-height:20px;}
+.eventsType{margin: 5px  0px 5px 140px;}
+.eventsType label{padding-right:7px;color:#333;}
+.publication1,.events1 label{padding-left:20px; text-align:left;font-family:Microsoft YaHei;font-size:13px;}	
+.publication2{ margin:5px 0px 5px 175px;}
+.events2{width:320px;height:150px;border: 1px #999 solid;overflow-y:scroll;	margin:5px auto 20px; background-color:#fff;}
+.EvBt{ margin-left:60px;}
+.sl .EvBt .dijitButton .dijitButtonNode{ min-width:60px;}
+/*---------order_historyNotes and shipment_historyNotes and payment_historyNotes---------*/
+.informationArea{width:1000px;height:494px;	margin:0 auto;	}
+.filter{height:40px;margin:10px 0px 0px 27px;	}
+.grid{height:380px;	width:980px; margin:0 auto;}
+.tabContainer{width:1000px;	height:494px;	}
+.sl .tabContainer .dijitButton .dijitButtonNode{	width:60px;  }
+
+/*--------------payment_charges_add-----------------*/
+.chargesAdd{width:550px;height:230px; padding-top:20px;	background-color:#eee;}
+.dialoginfoarea{ margin-left:130px;	}
+.dialoginfoarea th { text-align:right; padding-right:7px;color:#454545;line-height:25px;}
+.dialoginfoarea_add_manual_charge_item{position:relative; left:10%; width:80%; top:5%}
+.dialoginfoarea_add_manual_charge_item tr { text-align:center; width:100%;}
+.dialoginfoarea_add_manual_charge_item th { text-align:right; width:40%; padding-right:2%;color:#454545;line-height:25px;}
+.dialoginfoarea_add_manual_charge_item td { text-align:left; width:60%; padding-left:2%;}
+.dialoginfoarea_add_manual_charge_item .shortin .dijitSelect {width:40%;}
+.dialoginfoarea_add_manual_charge_item .shortin .dijitTextBox {width:40%;}
+.ratingnotes{ width:690px;  height:200px;	}
+.equipment label,.rating label{padding-left:20px;	text-align:left;font-family:Microsoft YaHei;font-size:14px;	}
+.equipment label{padding-left:10px;}
+
+/*-------------payment_charges_edit-------------*/
+.chargesNotesEdit{width:580px;	 height:230px;	}
+
+/*----------------payment_charges_rating notes--------------------*/
+.charges_ratingNotes{width:600px; height:230px;	padding:10px 0;	}
+.ratingnotes{width:580px;height:200px;margin:0 auto;}
+
+/*----------------payment_charges_selectAccessorial---------------*/
+.ratingnotes1{ width:96%;  height:200px;margin:0 auto;}
+.sl .longselect .dijitSelect .dijitButtonContents{width:360px;}
+/*----------------payment_charges_specific add---------------*/
+.chargesSpecificAdd{width:100%; height:270px;	background-color:#eee;}
+
+/*----------------payment_charges_specific edit-------------*/	
+.chargesSpecificEdit{width:600px; height:270px;	background-color:#eee;}
+
+/*----------------payment_charges_specific edit(2)-----------*/	
+.chargesSpecificAdd1{width:580px; height:200px;	}
+
+/*------------------------payment_charges_viewdetals(1)and (2)-----------------------------------*/
+.contracts{ width:600px; padding:20px 0; background-color:#eee; }
+.contracts  hr  {	border:none;border-top:1px solid #CCC;border-bottom:1px solid #fff;	height:0px;	width:96%;	}
+.dialoginfoarea3 th,.dialoginfoarea2 th,.dialoginfoarea1 th ,.dialoginfoarea12 th{ text-align:right;padding-right:7px;width:150px;padding-right:7px;line-height:20px; color:#454545;}
+.dialoginfoarea3 td,.dialoginfoarea2 td,.dialoginfoarea1 td{width:120px;}
+.equipment .dialoginfoarea3 th{width:140px;}
+.equipment .dialoginfoarea3 td{width:130px;}
+.equipment {	width:580px;margin:0 auto;   }
+
+/*-----------------payment_edit invoice----------------------*/
+.invoice{height:400px;	width:98%;	margin:0 auto;	}
+.invoiceinput1{ margin: 20px 0 0 20px; 	}
+.invoiceinput1 th { text-align:right; padding-right:7px;	 padding-left:20px;	}
+.shipnote { float:right;	 margin:20px 27px;	}
+.chargesnav  .order{	color:#666;	font-size:12px;	text-decoration:none;	}
+.chargesnav a{color:#000;font-size:16px;	text-decoration:none;	}
+.chargesnav{text-align:center;}
+.popupdriver{width:60%;	height:324px;border:1px #CCC solid;	margin:0 auto;background:#FFF;	}
+.title1{ height:24px;background:url(../images/pptop.png) repeat-x;padding:5px 0px 5px 10px;	font-size:16px;	color:#00649d;	}
+.ppareadirver{height:260px; }
+.diverinfo{ margin:70px 0px 80px 230px;	}
+.diverinfo th{ float:right;  padding-right:10px;	}
+
+/*-----------fleet_driverInfo----------------------------*/
+.fleetDriverInformation,.editdate{width:600px;padding:20px 0;background-color:#eee;}
+
+/*-----------historyNotes_alerts_addAlerts---------------*/	 
+.addIformation{width:500px; padding:20px 0; background-color:#eee;	}
+.subject{ margin: 20px 0px 0px 150px;	}
+.details{ margin: 10px 0px 0px 150px;	}	
+.dialoginfoarea span{padding-right:10px;}
+
+/*-----------historyNotes_alerts_addNote---------------*/	 
+.addIformation1{width:500px;  height:130px;	}
+.apply{ margin: 20px 0px 0px 140px;}
+
+/*-----------historyNotes_alerts_addNote11---------------*/	 
+.addIformation1{width:500px; height:130px;	}
+.dialoginfoarea4{ width:460px; height:120px;	}	
+.dialoginfoarea4 th { width:180px; text-align:right;	}
+
+/*-----------contacts---------------*/	
+.subtitle{padding-left:20px;line-height:25px;}
+.averageRatesStops{margin:0 auto;margin-top:15px;}
+.averageRatesStops th{padding-right:7px;width:100px;text-align:right;line-height:25px;color:#333;}
+.submit{text-align:center;margin-top:20px;}
+.chargeDetailsGrid,.accessdatagrid,.sa_datagrid,.vd_datagrid,.rg_datagrid{width:98%;margin:0 auto;}
+.chargeDetailsGrid{height:180px;}
+.accessdatagrid{height:370px;}
+.section_datagrid{height:280px;}
+.acc_datagrid{height:300px;}
+.sa_datagrid{height:370px;}
+.vd_datagrid{height:380px;}
+.rg_datagrid{height:200px;}
+.line{height:0px;border-top:1px solid #bcbcbc;border-bottom:1px solid #fff;margin-top:7px;margin-bottom:5px;}
+.contract_info th{text-align:right;width:80px;line-height:25px;color:#454545;}
+.contract_info td{width:150px;}
+.acc_search{padding:4px 0 4px 20px;}
+.acc_search label{padding-right:7px;}
+.rg_detail{width:80%;margin:0 auto;  }
+.rg_detail th,.rg_info th{ text-align:right;padding-right:7px;color:#454545; line-height:25px}
+.rg_detail th{width:100px;}
+.rg_detail td{width:200px;}
+.rg_info{margin-top:7px;}
+.rg_info th{width:200px;}

@@ -1,0 +1,154 @@
+/* Button | DropDownButton | ComboButton | ToggleButton
+ * 
+ * Styling Buttons mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitButton
+ * 		.dijitDropDownButton
+ * 		.dijitComboButton
+ * 		.dijitButtonNode - common button/arrow wrapper shared across all three button types 
+ *
+ * 2. Button text
+ * 		.dijitButtonText
+ * 
+ * 3. Arrows - only for DropDownButton and ComboButton
+ * 	     There are total four directions arrows - down, left, right, up:
+ * 		.dijitArrowButtonInner - down arrow by default
+ *      .dijitLeftArrowButton .dijitArrowButtonInner - left arrow
+ *      .dijitRightArrowButton .dijitArrowButtonInner - right arrow
+ *      .dijitUpArrowButton .dijitArrowButtonInner - up arrow
+ * 
+ * 4. States - Hover, Active, Disabled, e.g.
+ * 		.dijitButtonHover .dijitButtonNode
+ * 		.dijitButtonActive .dijitButtonNode
+ * 		.dijitButtonDisabled .dijitButtonNode
+ *      
+ *      .dijitDisabled .dijitArrowButtonInner  - disabled arrow states 
+ */
+
+@import "../variables";
+
+.sl .dijitButtonNode {
+	/* rules for dijit.form.*Button widgets and arrow nodes on ComboBox, Spinner etc. */
+	-webkit-transition-property:background-color;
+ 	-webkit-transition-duration:.3s;
+}
+
+.sl .dijitButton .dijitButtonNode,
+.sl .dijitDropDownButton .dijitButtonNode,
+.sl .dijitComboButton .dijitButtonNode,
+.sl .dijitToggleButton .dijitButtonNode {
+	/* rules for the dijit.form.*Button widgets (see also ComboButton section below) */
+	border: 1px solid @button-border-color;
+	padding:2px 4px 4px 4px;
+	background-image: url("images/button.png");
+	background-position: center top;
+	background-repeat: repeat-x;
+	background-color: @button-background-color;
+	.border-radius(@button-border-radius);
+	.box-shadow(0 1px 1px rgba(0,0,0,0.15));
+}
+
+.sl .dijitComboButton .dijitArrowButton {
+	border-left-width: 0;
+	padding: 4px 2px 4px 2px;	/* TODO: still needed? */
+}
+
+/*arrow styles for down/up/left/right directions*/
+.sl .dijitArrowButtonInner {
+	width: 15px;
+	height: 15px;
+	margin: 0 auto;
+	background-image:url("images/buttonArrows.png");
+	background-repeat:no-repeat;
+	background-position:-51px 53%;
+}
+.sl .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -77px 53%;
+}
+.sl .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -26px 53%;
+}
+.sl .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: 0 53%;
+}
+.sl .dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 53%;
+}
+.sl .dijitDisabled .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -177px 53%;
+}
+.sl .dijitDisabled .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -126px 53%;
+}
+.sl .dijitDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: -100px 53%;
+}
+
+.sl .dijitButtonText {
+	padding: 0 0.3em;
+	text-align: center;
+}
+
+
+
+
+
+/* hover status */
+.sl .dijitButtonHover .dijitButtonNode,
+.sl .dijitDropDownButtonHover .dijitButtonNode,
+.sl .dijitComboButton .dijitButtonNodeHover, 
+.sl .dijitComboButton .dijitDownArrowButtonHover,
+.sl .dijitToggleButtonHover .dijitButtonNode {
+	background-color: @button-hovered-background-color;
+	color:@text-color;
+ 	-webkit-transition-duration:.2s;
+}
+
+/* checked status */
+.sl .dijitButtonActive .dijitButtonNode, 
+.sl .dijitDropDownButtonActive .dijitButtonNode,
+.sl .dijitComboButtonActive .dijitButtonNode,
+.sl .dijitToggleButtonActive .dijitButtonNode {
+	background-color: @button-pressed-background-color;
+	.box-shadow(0 0 0 rgba(0,0,0,0));
+ 	-webkit-transition-duration:.1s;
+}
+
+/* disabled status */
+.sl .dijitButtonDisabled,
+.sl .dijitDropDownButtonDisabled,
+.sl .dijitComboButtonDisabled,
+.sl .dijitToggleButtonDisabled {
+	background-image: none;
+	outline: none;
+}
+
+.sl .dijitButtonDisabled .dijitButtonNode,
+.sl .dijitDropDownButtonDisabled .dijitButtonNode,
+.sl .dijitComboButtonDisabled .dijitButtonNode,
+.sl .dijitToggleButtonDisabled .dijitButtonNode { 
+	background-position:0 -149px;
+	background-color: @disabled-background-color;
+	border: solid 1px @disabled-border-color;
+	color: @disabled-text-color;
+	.box-shadow(0 0 0 rgba(0,0,0,0));
+}
+.sl .dijitComboButtonDisabled .dijitArrowButton{ 
+	border-left-width: 0;
+}
+/* for ComboButton */
+.sl table.dijitComboButton {
+	border-collapse: separate;	/* override dijit.css so that ComboBox rounded corners work */
+}
+
+.dj_ie6 .sl .dijitButtonNode {
+	background-image: none;
+}
+
+.sl .dijitComboButton .dijitStretch {
+	.border-radius(@button-border-radius 0 0 @button-border-radius);
+}
+.sl .dijitComboButton .dijitArrowButton {
+	.border-radius(0 @button-border-radius @button-border-radius 0);
+}

@@ -1,0 +1,79 @@
+ <div> 
+	<div  title=${_ui_string_customizetable} dojoType="dijit.Dialog" dojoAttachPoint="dialog">
+   	<div class="common_to">
+       <br />
+         <div class="cuspage" dojoAttachPoint="_pagesize">
+          	${_ui_string_preferredpagesize}
+           <select dojotype="dijit.form.Select" dojoAttachPoint="pageSize" autoComplete="true" pageSize="10">
+           <option value=15>15</option>
+           <option value=25>25</option>
+           <option value=50>50</option>
+           <option value=75>75</option>
+           <option value=100>100</option>
+           <option value=250>250</option>
+           <option value=500>500</option>
+           <option value=1000>1000</option>
+           <option value=10000>${_ui_string_all}</option>
+           </select>
+           </div>
+           <div class="buttons">
+                <button dojotype="dijit.form.Button" type="button" dojoAttachPoint="up" dojoAttachEvent="onClick:_up" disabled="true">${_ui_string_moveup}</button>
+                <button dojotype="dijit.form.Button" type="button" dojoAttachPoint="down" dojoAttachEvent="onClick:_down" disabled="true">${_ui_string_movedown}</button>
+                <button dojotype="dijit.form.Button" type="button" dojoAttachPoint="displayOrHide" dojoAttachEvent="onClick:_hideOrDisplay" disabled="true">${_ui_string_displayorhide}</button>
+                <button dojotype="dijit.form.Button" type="button"  dojoAttachEvent="onClick:_getDefaultLayout">${_ui_string_defaults}</button>
+           </div>
+            <div class="custable">    
+					<table dojoType="dojox.grid.EnhancedGrid" dojoAttachPoint="configGrid" plugins="{indirectSelection: true}" selectionMode="single" canSort="false" escapeHTMLInData="false">
+                                <thead>
+                                    <tr>
+                                          <th field="column" width="60%">
+                                          	${_ui_string_column}
+                                        	    
+                                          </th>
+                                          <th field="ally" width="40%">
+                                         	${_ui_string_displayorhide}     	    
+                                          </th>
+                                      </tr>
+                                </thead>
+                    </table>
+			</div>
+   
+      <br />
+      <div id="btarea2">
+        <div id="infobts">
+        <span class="activebt"><button dojotype="dijit.form.Button"  dojoAttachEvent="onClick:_submit">${_ui_string_save}</button>
+        <button dojotype="dijit.form.Button"  dojoAttachPoint="copytouser" type="button" dojoAttachEvent="onClick:_showCopyDialog" style="display:none;">${_ui_string_copy}</button></span>
+        <span class="passivebt"><button dojotype="dijit.form.Button" dojoAttachEvent="onClick:cancel">${_ui_string_cancel}</button></span>
+        </div>
+      </div>
+</div>
+</div>
+	<div title=${_ui_string_copytabletitle} dojotype="dijit.Dialog" dojoAttachPoint="copyDialog">
+	<div class="copyto">
+          <div class="user_info">
+            <table>
+             <tr>
+             <th>${_ui_string_to}</th>
+             <td><input type="radio" dojotype="dijit.form.RadioButton" name="allOrSelect" dojoAttachPoint="noAll" checked="true" /> <label>${_ui_string_users}</label></td>
+             <td>     
+              <select multiple="true" name="multiselect" dojoType="dojox.form.CheckedMultiSelect" dojoAttachPoint="users">
+              </select>
+              </td>
+              </tr>
+              <tr>
+              <th></th>
+              <td> <input type="radio" dojotype="dijit.form.RadioButton" dojoAttachPoint="all"  name="allOrSelect"  dojoAttachEvent="onChange:_selectAll"/> <label>${_ui_string_allusers}</label></td>
+             </table>
+          </div>
+      
+      <div id="btarea2">
+        <div id="infobts">
+        <button dojotype="dijit.form.Button" type="button" dojoAttachEvent="onClick:_confirm" >${_ui_string_copy}</button>
+        <button dojotype="dijit.form.Button" type="button" dojoAttachEvent="onClick:_cancelCopyDialog">${_ui_string_cancel}</button>
+       </div>
+    </div>
+   </div>
+	</div>
+ </div>
+ 
+ 

@@ -1,0 +1,74 @@
+<div>
+
+	<form dojotype="dijit.form.Form" dojoAttachPoint="searchForm">
+	
+	       
+	<table class="searcher" dojoAttachPoint="searchtable">
+		<tr dojoAttachPoint="customized_search_tr">
+			<th>${_ui_string_search}</th>
+			<td><select
+				dojotype="dijit.form.FilteringSelect" autoComplete="true" dojoAttachPoint="customized_search_select"
+				maxHeight="400" name="searchContent" style="width: 140px">
+				<option value=""></option>
+			</select> 
+			
+			<span class="iconbt">
+			<button dojoType="dijit.form.Button" iconClass="plusIcon classIcon" showLabel="false" type="button" dojoAttachEvent="onClick:_addSearch">新建搜索</button>
+			</span>
+			<span class="iconbt">
+				<button dojoType="dijit.form.Button" iconClass="editIcon classIcon" showLabel="false" type="button" dojoAttachEvent="onClick:_editSearch" >编辑搜索</button>
+			</span>
+			</td>
+			<th></th>
+			<td>
+			<span style="display:none" dojoAttachPoint="alertView">
+	      	<input type="radio" dojoType="dijit.form.RadioButton" name="alerts" value="latest" checked="checked" dojoAttachPoint="alertView_last"/>最新&nbsp;&nbsp;
+		 	 <input name="alerts" type="radio" value="history" dojotype="dijit.form.RadioButton" dojoAttachPoint="alertView_history"/> 历史  
+		  	</span> 
+			</td>
+		</tr>
+		<tr>
+			<th>${_ui_string_find}</th> 
+			<td class="shortselect">
+				<select dojoAttachPoint="find_select"
+					dojotype="dijit.form.FilteringSelect"  name="findContent" style="width:110px">
+					<option value=""></option>
+				</select> 
+				<input type="text" dojoAttachPoint="find_text" dojoType="dijit.form.TextBox" name="findText" style="width:90px"/>
+			</td>
+			
+			<th><em class="star" dojoAttachPoint="star" style="display:none">* </em>${_ui_string_date}</th> 
+			
+			<td class="shortselect">
+				<select dojoAttachPoint="date_select" dojotype="dijit.form.FilteringSelect"  name="dateContent" style="width:120px">
+					<option value=""></option>
+				</select>
+				<span style="display:none" dojoAttachPoint="basedate" >
+					<input style="width:90px" type="text" dojoType="dijit.form.DateTextBox" dojoAttachPoint="fixed_date" name="basedate"/>
+				</span>
+				<span style="display:none" dojoAttachPoint="dayrange" >
+					<span style="display:none" dojoAttachPoint="basetime" class="time">
+						<input type="text" dojoType="dijit.form.TimeTextBox" dojoAttachPoint="fixed_time" name="basetime" 
+							constraints={timePattern:"HH:mm"} value="now" style="width:60px"/>
+					</span>
+					<select dojoAttachPoint="range_select" dojotype="dijit.form.FilteringSelect" name="rangeContent" maxHeight="400" style="width:106px">
+						<option value="0:---">及之前的 30 天</option>
+					</select>
+					<span style="display:none" dojoAttachPoint="todate" >
+						<input style="width:90px" type="text" dojoType="dijit.form.DateTextBox" dojoAttachPoint="to_date" name="todate" />
+					</span>
+					<span style="display:none" dojoAttachPoint="totime" class="time">
+						<input type="text" dojoType="dijit.form.TimeTextBox" dojoAttachPoint="to_time" name="totime" 
+							constraints={timePattern:"HH:mm"} value="now" style="width:60px"/>
+					</span>
+				</span>
+			</td>
+		</tr>
+<!--		-->
+	</table>
+	<div class="searchbt">
+		<button type="button" dojoType="dijit.form.Button" dojoAttachPoint="searchButton" dojoAttachEvent="onClick:searchWithValidation" disabled="true">${_ui_string_button_find}</button>
+	</div>
+	</form>
+	
+</div>

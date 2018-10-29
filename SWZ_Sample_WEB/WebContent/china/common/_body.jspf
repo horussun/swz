@@ -1,0 +1,32 @@
+<%@ page language="java" isELIgnored="false" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="_head.jspf" %>
+
+<script type="text/javascript">
+	dojo.require("dojox.widget.Standby");
+</script>
+<BODY class="sl" id="bodyId">
+<!-- body standBy div -->
+<div id ="bodyStandBy" target="bodyId" dojoType="dojox.widget.Standby" color="" zIndex="1000"></div>
+<!-- Dialog standBy div -->
+<div id ="dialogStandBy" target="mainDialog" dojoType="dojox.widget.Standby" color="" ></div>
+<!-- Start of Containner -->
+<div id="container"  style="height:100%">
+		<div id="header">
+			<div id="sllogo">
+				<img src="${pageContext.request.contextPath}/china/images/sllogo1.png" width="680px" height="49px" />
+			</div>
+			<div id="ibmlogo">
+				<img src="${pageContext.request.contextPath}/china/images/ibmlogo.png" width="69px" height="28px" />
+			</div>
+			<div id="logout">
+				<label>${role.userName}</label>
+				<label> | </label> 
+				<img src="${pageContext.request.contextPath}/china/images/optionicon.png" width="12px" height="12px"/> 
+				<label> | </label> 
+				<a href="../main/login" target="_parent"><fmt:message key="WEB_BASE_NAV_LOGOUT" bundle="${ClientStrings}"></fmt:message></a>
+			</div>
+
+			<div id="usericon">
+				<img src="${pageContext.request.contextPath}/china/images/user.png" width="12px" height="13px" />
+			</div>
+		</div>

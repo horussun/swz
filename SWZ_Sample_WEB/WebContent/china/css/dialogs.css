@@ -1,0 +1,94 @@
+
+/*--------------------------公共部分-------------------------------------------*/	
+.common,.common2,.common_to{margin:0 auto;	background-color:#eee;	}
+.common{width:600px;}
+.common2{width:700px;}
+#btarea2{height:41px;background-color:#e9f1fa;border-top:#bcbcbc 1px solid;  }
+.dialogs_title{font-size:13px;padding-left:20px;}
+
+/*--------------------------取消订单运单部分-------------------------------------------*/
+#ship_info,#status_info ,#order_info ,#commodity { width:100%; padding:10px 0;    }
+#update_info table,#ship_info table,#status_info table,#order_info table,#commodity table{ width:100%;}
+#ship_info table th,#status_info table th,#order_info table th,#commodity table th{text-align:right;padding-right:7px; width:18%; padding:5px 0; color:#454545;}
+#ship_info table td,#status_info table td,#order_info table td,#commodity table td{padding:5px 0;}
+#ship_info table td,#status_info table td,#order_info table td{width:32%;}
+#btarea2 label{float:right;color:#900;padding-right:10px;padding-top:12px;font-size:14px;}
+.tips{text-align:center;color:#900;padding:15px 0;font-size:14px;	}
+
+/*-------------------------选择模式部分-------------------------------*/
+.select_mode{width:600px;margin:0 auto;	background-color:#eee;	}
+.mode{width:100%;padding:25px 0 25px 10px;	}
+/*-------------------------shipment ready-------------------------------*/
+.shipment_ready{width:500px;margin:0 auto;	background-color:#eee;	}
+.ready_mode{width:100%;padding:25px 0 25px 10px;text-align:center	}
+
+/*-------------------------shipment create search copy to users-------------------------------*/
+.addattribute,.copyto{width:600px;	margin:0 auto;	background-color:#eee;	}
+.user_info{	height:150px;padding-top:10px;	}
+.user_info th{width:100px;text-align:left;padding-left:13px;vertical-align:text-top;	font-size:13px;	}
+.user_info td{vertical-align:top;padding:3px 0; 	}
+ 
+/*---------------shipment ->new shipemtnt ->add accessorial attribute---------------------*/
+.attribute_info{padding:20px 0;}
+.addattribute form{ width:400px; margin: 0 auto ; height:150px; border:1px solid #bcbcbc; padding:2px 0 2px 3px; line-height:20px; overflow-y:scroll;background-color:#FFF;}
+
+/*----------------------------------------shipment carrier selection--------------------------------------*/
+/*---tender option---*/
+.common_to{width:600px;}
+.tender_mode{text-align:center;	padding:10px;	}
+.tender_mode span{padding-right:7px;}
+.carrier_type{padding:7px 0;width:80%;margin-left:40%;	}
+.carrier_type td{padding:3px 0;	text-align:left;	}	
+/*---override tender ---*/	
+.override{text-align:left;	padding-left:25px;	}
+.overtop{vertical-align:top;line-height:26px;width:100px;	}
+.override_inner th{text-align:right;	padding-right:7px;width:150px;	color:#454545;}	
+.untender th{width:278px;text-align:right;padding-right:7px;	color:#454545;}
+.untender{padding-bottom:15px}
+/*---carrier details ---*/
+.carrierdt{width:998px;	height:484px;}		
+/*----------------------------------------shipment itinerary--------------------------------------*/	
+.cp_time{padding:7px 0 0 205px;}
+.cp_info{padding:0 0 7px 180px;}
+.cp_time th,.cp_info th{text-align:right;padding-right:7px; color:#454545;}	
+/*----------------------------------------update itinerary--------------------------------------*/	
+.updateItenerary{width:600px; padding-bottom:10px; background-color:#EEE;}
+
+/*----------------------------------------shipment all tender--------------------------------------*/	
+.alltender{text-align:center;	padding:7px 0 10px 0px;	}
+.alltender span{padding-right:7px;}
+.alltender .dijitSelect{width:120px;}
+	
+/*----------------------------------------manual vouncher--------------------------------------*/	
+.infotext{padding:5px 0 5px 20px;}
+.infotext p{ font-size: 13px; line-height: 25px;}  
+.voucher_grid{height:110px;}
+
+/*---------------------------------------edit ship--------------------------------------*/
+.outframe{width:600px;}	
+.editship  {margin:20px auto;}
+.editship th{text-align:right;padding:7px 7px 7px 0;	color:#454545;}
+
+/*---------------------------------------add dedicated fleet-------------------------------------*/
+.dedicatedfleet_add,.dedicatedfleet_add2,.tractorfleet_add{margin:0 auto;	padding:7px 0px;	}
+.dedicatedfleet_add th,.dedicatedfleet_add2 th,.tractorfleet_add th,.addtractor table th{padding-right:7px;text-align:right;line-height:25px;	color:#454545;}
+.dedicatedfleet_add2{margin-left:100px;	margin-bottom:7px;	}
+.tractorfleet_add{padding:20px;}
+.tractorfleet_add th{width:100px;}
+.addtractor table{margin:0 auto;}
+.addtractor table th{padding-left:15px;}
+.addtractor{padding-top:10px;overflow:auto;}
+.sl .ad_op .dijitTitlePaneTextNode{font-family:Microsoft Yahei;font-size:13px;}
+/*---------------------------------------contract------------------------------------*/
+.contract_detail{width:600px; padding:20px 0;}
+.dialog_mass{background-color:#eee;height:400px;padding:0 5px;}
+.dialog_mass form{border:1px solid #B5BCC7;border-color:;max-width:980px;overflow:auto; height:350px;background-color:#FFF;}
+
+.common_small_dialog_content{position:relative; left:20%; width:60%; padding-top:20px; padding-bottom:20px}
+.common_small_dialog_content th { text-align:right; width:40%; padding-right:2%;color:#454545;line-height:25px;}
+.common_small_dialog_content td { text-align:left; width:60%; padding-left:2%;}
+.common_small_dialog_content_2_row{position:relative; left:15%; width:80%; padding-top:20px; padding-bottom:20px}
+.common_small_dialog_content_2_row th { text-align:right; width:15%; padding-right:2%;color:#454545;line-height:25px;}
+.common_small_dialog_content_2_row td { text-align:left; width:30%; padding-left:2%;}
+/*---------------------------------------load builder------------------------------------*/	
+.ppx_type{padding:7px 0;width:80%;margin-left:20%;	}

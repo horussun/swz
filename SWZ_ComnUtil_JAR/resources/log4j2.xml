@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="soa2" packages="">
+  <Appenders>
+    <RollingRandomAccessFile name="appErrLog" fileName="/var/mqsi/BQD_SOA2_ESB_APP.log"
+                 filePattern="/var/mqsi/$${date:yyyy-MM}/BQD_SOA2_ESB_APP-%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <PatternLayout>
+        <!-- <Pattern>%d %p %c{1.} [%t] %m%n</Pattern> -->
+        <Pattern>%5p [%t] %r (%F:%L) %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="24" modulate="true"/>
+        <SizeBasedTriggeringPolicy size="20 m"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5"/>
+    </RollingRandomAccessFile>
+    
+    <RollingRandomAccessFile name="auditErrLog" fileName="/var/mqsi/BQD_SOA2_ESB_LOG.log"
+                 filePattern="/var/mqsi/$${date:yyyy-MM}/BQD_SOA2_ESB_LOG-%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <PatternLayout>
+        <!-- <Pattern>%d %p %c{1.} [%t] %m%n</Pattern> -->
+        <Pattern>%5p [%t] %r (%F:%L) %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="24" modulate="true"/>
+        <SizeBasedTriggeringPolicy size="20 m"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5"/>
+    </RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+  	<Logger name="com.bqd.soa2.esb.flow.app.log.trace" level="error" additivity="false">
+      <AppenderRef ref="auditErrLog"/>
+    </Logger>
+    
+    <Logger name="com.bqd.soa2.esb.flow.svcmon.SvcEventReader" level="error" additivity="false">
+      <AppenderRef ref="auditErrLog"/>
+    </Logger>
+	  
+    <Root level="error">
+      <AppenderRef ref="appErrLog"/>
+    </Root>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,27 @@
+ <div> 
+   	<div dojotype="dijit.Dialog" dojoAttachPoint="infoMsgDialog" >
+   	
+        <div class="confirm_fail_success">
+		      <div class="main">
+		           <img src=${_image_path} width="22px" height="22px" />
+		           <label>${message}</label>
+		      </div>
+		      
+		      <div class="btarea">
+		        <div class="alert_bt">
+		        	<span class="activebt">
+		        	<button dojotype="dijit.form.Button" dojoAttachPoint="button_ok" dojoAttachEvent="onClick:button_ok_click" >${_button_ok}</button>
+		        	</span>
+		        	<span class="passivebt">
+		        	<button dojotype="dijit.form.Button" dojoAttachPoint="button_cancel" dojoAttachEvent="onClick:button_cancel_click" style="display:none;">${_button_cancel}</button>
+		        	</span>
+		        </div>
+		      </div>
+	    </div>
+	    
+     </div>
+     
+	
+ </div>
+ 
+ 

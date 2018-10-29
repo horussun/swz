@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!-- End of container -->
+</div>
+<div id="footer">
+	<!--label>© Copyright IBM Corp.2000,2012.All Rights Reserved.</label-->
+</div>
+
+</body>
+</html>

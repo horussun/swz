@@ -1,0 +1,43 @@
+ <div> 
+	<div dojotype="dijit.Dialog" title="排序" dojoAttachPoint="dialog">
+	<div class="common_to">
+      <br />
+            <table class="info">
+              <tr>
+                <th>排序方式1</th>
+                <td><select dojotype="dijit.form.FilteringSelect" autoComplete="true"  dojoAttachPoint="column_sortl_name" ></select></td>
+                 <th>顺序</th>
+                 <td> <input type="radio" dojoType="dijit.form.RadioButton" name="sort1"  dojoAttachPoint="column_sortl_order_up" checked=true /><label for="radioOne">升序</label>
+                 &nbsp;&nbsp; <input type="radio" dojoType="dijit.form.RadioButton" name="sort1" dojoAttachPoint="column_sortl_order_down" /><label for="radioTwo"> 降序</label>
+                 </td>
+              </tr>
+              <tr>
+                <th>排序方式2</th>
+                <td><select dojotype="dijit.form.FilteringSelect" autoComplete="true" dojoAttachPoint="column_sort2_name" ></select></td>
+                 <th>顺序</th>
+                <td> <input type="radio" dojoType="dijit.form.RadioButton" name="sort2" dojoAttachPoint="column_sort2_order_up" checked=true /><label for="radioOne">升序</label>
+                 &nbsp;&nbsp; <input type="radio" dojoType="dijit.form.RadioButton" name="sort2"dojoAttachPoint="column_sort2_order_down"  /><label for="radioTwo"> 降序</label>
+                 </td>
+              </tr>
+              <tr>
+                <th>排序方式3</th>
+                <td><select dojotype="dijit.form.FilteringSelect" autoComplete="true"  dojoAttachPoint="column_sort3_name"></select></td>
+                 <th>顺序</th>
+                <td> <input type="radio" dojoType="dijit.form.RadioButton" name="sort3"  dojoAttachPoint="column_sort3_order_up" checked=true  /><label for="radioOne">升序</label>
+                 &nbsp;&nbsp; <input type="radio" dojoType="dijit.form.RadioButton" name="sort3" dojoAttachPoint="column_sort3_order_down"/><label for="radioTwo"> 降序</label>
+                 </td>
+              </tr>
+            </table>
+         <br />
+     
+      <div id="btarea2">
+        <div id="infobts">
+        <span class="activebt"><button dojotype="dijit.form.Button" dojoAttachEvent="onClick:submit">排序</button></span>
+         <span class="passivebt"><button dojotype="dijit.form.Button" dojoAttachEvent="onClick:cancel">取消</button></span>
+        </div>
+      </div>
+	</div>
+</div>	
+ </div>
+ 
+ 

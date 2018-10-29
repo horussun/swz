@@ -1,0 +1,450 @@
+html, body { height: 100%;}
+body{padding:0;	margin:0;min-width:1000px;overflow:auto !important;font-family:Arial,SimSun,sans-serif;background-color:#EEEEEE;}
+#container { min-height: 100%; height: 100%;margin: 0 auto -20px;}
+hr{ border:none;border-top:1px solid #d3d3d3;border-bottom:1px solid #F5F5F5;height:0px;width:98%;margin:3px auto;}
+.star{color:#F60;}
+.title{	padding-left:20px;	text-align:left;font-family:Microsoft YaHei;font-size:13px;}
+.tabtitle{ float:right; margin-top:10px; color:#333; text-shadow: 0px 1px 1px white; }/**/
+.tabtitle td{padding-right:10px; }
+/*------------------------------------------------------header------------------------------------*/
+#header{height:50px;background:url(../images/headerback.png) repeat-x;	}
+#sllogo{float:left;	}	
+#header a:hover,a:active{color:#FFF;	}
+#usericon{float:right;	margin:25px 3px 0px 0px;display: inline;}
+#logout{float:right;margin:23px 20px 0px 0px;display:block;	}
+#logout img{	vertical-align:middle; }
+#logout a{color:#999;text-decoration:none;	vertical-align:middle;	}
+#logout label{color:#999;vertical-align:middle;	}
+#ibmlogo{float:right;margin:11px 10px 0 0;	display: inline;}
+
+/*----------------------------------------------------menubar-----------------------------------------*/
+#menubar{padding:0 20px;}
+#option{float:right;padding-top:6px;}
+#nowtime{color:#DBE9F7;	font-size:12px;	}
+
+/*-----------------------------------------------------------breadcrumb--------------------------------------------------------*/
+#breadcumb{	background: -moz-linear-gradient(center top , #ffffff, #d8d8d8) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#d8d8d8));
+	background:url(../images/breadcrumb.png) repeat-x;
+	border-bottom: 1px solid #bcbcbc;
+	padding:3px 0px 3px 34px;
+	font-family:microsoft YaHei;
+	color:#333;
+	font-size:14px;
+	}
+#breadcumb a{color:#215A92;	text-decoration:none;font-size:12px;}
+#breadcumb a:hover{text-decoration:underline;}
+#breadcumb img{padding:0 4px;}
+.showBreadCrumb{display:block;}
+.hideBreadCrumb{display:none;}
+
+/*---------------------------------------------------------content---------------------------------------------------*/
+#content,#content2{	background-color:#EEEEEE; }
+#content2{border-top:1px solid #FFFFFF;}
+
+/*----------------------------------------search part----------------------------------------------------------*/
+.searchpart3,.searchpart{height:55px;padding:5px 0;	background-color:#e4e4e4;border-bottom:#bcbcbc solid 1px;	}
+.searchpart2{border-top:#bcbcbc solid 1px;}
+.searchpart3{height:30px;}
+.searcher{float:left;}
+.searcher th{text-align:right;padding:0 5px 0 10px;	}
+.searchbt{float:left;margin-top:24px;display: inline;	}
+.sl .shortselect .dijitTextBox{width:110px;}
+.sl .shortdate .dijitTextBox{width:90px;	}
+.sl .shortselect .time .dijitTextBox{width:68px;}
+/*--------------------------------------------------------operation button-------------------------------------------------------*/
+.buttons{margin-left:13px;	line-height:40px;    }
+.sl .buttons .dijitButton .dijitButtonNode{ min-width:60px;}
+
+/*-----------------------------------------------------------list datagrid------------------------------------------------------*/
+.datagrid_area{width:98%;	margin:0 auto;	padding-bottom:10px;	}
+.datagrid{height:423px;}
+.ftdatagrid{height:140px;}
+.shipment_datagrid{height:252px;}
+.stop_datagrid{ padding-top:4px;height:139px;}
+.dedicatedfleet{width:98%;margin:0 auto;height:420px;}
+.tender_grid{height:190px;width:98%;margin:0 auto;	margin-top:5px;	padding-bottom:13px;}
+.dojoxGrid .dojoxGridHeader .dojoxGridCell .dojoxGridSortNode,.dojoxGrid .dojoxGridRow .dojoxGridCell {white-space: nowrap;}
+
+/*--------------------------------------------fleet----------------------------------------------*/
+.borderlayout{width:100%;height: 565px;} 
+.sl .centerpane .dijitSplitContainer-dijitContentPane,.sl .centerpane .dijitBorderContainer-dijitContentPane{background-color:#EEE;overflow:hidden;}
+
+/*------------------------------------------------information area----------------------------------------*/
+#infoarea,.infoarea3{ width:998px;	height:510px;overflow-y:auto;margin:0 auto;	border:1px solid #bcbcbc;border-bottom:none;padding-bottom:13px;}/*form*/
+#infoarea{background-color:#e4e4e4;	}
+.infoarea3{	padding-bottom:0;height:495px;	}
+#infoarea2{ width:998px; margin:0 auto;  }/*tab*/
+
+/*-----------------------------------------------submit button area-----------------------*/
+#btarea{ width:998px;	height:40px;background-color:#e9f1fa;border:#bcbcbc 1px solid;	margin:0 auto;	}
+#infobts{float:right;margin:5px 20px 5px 0;	display: inline;}
+
+/*-------------------------------------------------create new order----------------------------------------------*/
+.detail_info,.info,.itinerary_detail{width:85%;	margin:0 auto;    }
+.detail_info th,.info th,.itinerary_detail th{text-align:right;padding-right:7px;	color:#454545;line-height:25px; }
+.detail_info th,.info th{width:16%;}
+.detail_info th{line-height:20px}
+.detail_info td,.info td{width:35%;}
+.info img{vertical-align:middle;	}
+.itinerary_detail th{width:100px;line-height:20px}
+/*--------------------------------------------------------items and add items--------------------------------------*/	
+#infoarea #items{height:400px;width:98%;	margin:0 auto;	}
+.massform{border:1px solid #B5BCC7;height:430px;width:98%;margin:0 auto;background-color:#FFF;overflow:auto;}
+.massentrywrapper{background-color:#fff;margin:0 5px;width:986px;height:442px;border:1px solid #B5BCC7;overflow:auto;}
+.massentry,.additems{border-collapse:collapse;background-color:#eee;width:100%;}
+.refer_grid{ margin-top:5px;background-color:#FFF;	}
+.massentry th,.item_grid table th,.refer_grid table th,.additems th{
+    border-color:white #BCBCBC #BCBCBC white;
+    border-width:1px;
+	border-style:solid;
+	background: -moz-linear-gradient(top, #EDF2F7, #D0DFEA);
+	background: -webkit-gradient(linear, left top, left bottom, from(#EDF2F7), to(#D0DFEA));
+    background: url("../images/header.png") #EDF2F7 repeat-x bottom;
+	height:21px;
+	padding:2px 5px;
+	}
+.massentry td,.item_grid table td,.refer_grid table td,.additems td{
+	border-color:transparent #E5DAC8 #E5DAC8 transparent;
+	border-width:1px;
+	border-style:solid;
+	padding:2px 5px;
+	}
+.massentry td{padding:2px 2px;min-width:80px;}
+.massentry td.tderror{border:2px solid red;}
+.selected{
+	background:url(../../javascript/dojo16/dojox/grid/resources/images/row_back.png) repeat-x scroll 0 0 #7DBEFA;
+	border-bottom:1px solid #769dc0;
+	border-top:1px solid #769dc0;
+	}
+.massentry .dijitTextBox{width:auto;	}
+.errortip{text-align:center;margin-top:-25px;margin-bottom:10px;}
+.errortipshow{background-color:#D46464;border:1px solid #fff;padding:5px 10px;text-align:center;color:#fff;}
+.errortiphide{visibility:hidden;background-color:#D46464;border:1px solid #fff;padding:5px 10px;text-align:center;color:#fff;}
+.shipment_entry{background:url(../../javascript/dojo16/dojox/grid/resources/images/row_back.png) repeat-x scroll 0 0 #bdd5de;}
+.order_entry{ background:url(../../javascript/dojo16/dojox/grid/resources/images/row_back.png) repeat-x scroll 0 0 #eee;	}
+/*--------------------------------------------------------tracking----------------------------------------------------*/	
+.current_tab{width:100%;height:497px;	}
+.reference_info th{width:40%;text-align:right;	}
+/*-----------view detail-----------------*/
+.item_grid,.refer_grid{	width:96%;height:110px;	overflow:auto;border:1px solid #ddd;margin:0 auto;	background-color:#fff;}
+.item_grid{height:140px; margin-top:13px;	}
+.item_grid table,.refer_grid table {width:100%;border-collapse:collapse;	}
+.refer_grid th{width:25%;}
+
+/*------------------------------------------------------- new shipment -------------------------------------------*/
+.topth{	text-align:right;	vertical-align:top;	line-height:26px;	}
+.note{margin-left:165px;}
+.note th{text-align:right;padding-right:7px;	}
+
+/*-------------------------------------------shipment_itinerary---------------------------------------------------*/
+.doubleclickcell{color:#306fa8;	font-weight:bolder ;}
+.titlecenter{margin-left:300px;	}
+.titlecenter2{margin-left:40px;	}
+.titlecenter3{margin-left:49%;	}
+.titlecenter4{margin-left:45%;	}
+#itinerary{ width:98%;margin:0 auto;height:180px;	}
+.payment_grid{ width:98%;	margin:0 auto;height:140px;	}
+.order_grid{ width:98%;	margin:0 auto;height:180px;	}
+
+/*--------update status-------*/
+.update_info{ width:100%;	}
+.update_info th{	text-align:right;width:200px;padding:5px 7px 5px 0;	color:#454545;}
+.update_info td{	padding:3px 0;}
+/*--------------------------------------------shipment_itinerary   add order----------------------------------------------*/
+.maincontent{ border-top:1px solid #FFFFFF;  }
+.datagrid2{ margin-top:40px;height:350px;	}
+/*----------------------------------------------------option--------------------------------------------------*/
+.tab{width:1000px;height:498px;	margin:0 auto;	}
+.sub .th_title{	padding-left:20px;	text-align:left;font-family:Microsoft YaHei;vertical-align:text-top;font-size:13px;color:#000;   }
+.sub  th{text-align:right;width:200px; padding-right:7px;line-height:25px;color:#454545;	}
+.sub label,.note label,.pub td label,.sort label,.radio_td label{padding-right:30px;}
+.tab .info{width:75%;}
+ #event{height:370px;width:980px;margin:0 auto;	margin-top:5px;	}
+.rating label:before,.sub .th_title:before,.publication1:before,.events1 label:before,.title:before{content:url("../images/titlebefore.png");	padding-right:5px;}
+.events1 .events2 label:before{content:none;}
+/*---------------------------option event add--------------------------------*/
+.pub{width:75%;	}
+.type_info{	margin-left:140px;}
+.type_info th{text-align:right;	padding-right:7px;	color:#454545;	line-height:20px}
+.pub th{	width:30%;}
+.topleft{vertical-align:top;line-height:26px;	}
+.triggercheck{width:400px;   height:150px;	border:1px solid #bcbcbc;	line-height:20px; overflow-y:scroll;	margin-top:3px;	padding-left:3px;	background-color:#FFF;	}
+.edit_trigger span{color:#333;}
+.check1{float:left;	margin-left:80px;	margin-top:15px;	}
+.check2{float:right;margin-right:80px;	margin-top:15px;	}
+/*----------------------------------shipment order_create search-------------------------------*/
+.sort table th,.save_as table th,.constraints table th{width:200px;	text-align:right;padding-right:7px;	line-height:25px; color:#454545;	}
+.save_as table{margin-top:10px;}
+.constraints{padding-bottom:10px;}	
+.constraints  img{vertical-align:middle;}
+.showdate{display:inline;}
+.hidedate{display:none;}
+/*----------------------------------shipment_carrier selection-------------------------------*/
+.cs_datagrid{height:240px;	width:98%;	margin:0 auto;	}
+.alerttipshow,.errortipshow2{padding:3px 0;background-color:#FEB111;border:1px solid white;text-align:center;color:#fff;font-weight:bold; }
+.alerttipshow{display:block;}
+.errortipshow2{display:none;background-color:#9F2121;}
+/*----------------------------------order_optimization -------------------------------*/	
+.checklabel label{line-height:25px;padding-left:2px;padding-right:7px;}
+.opfleet_grid,.scd_grid,.release_grid{width:98%;margin:0 auto;height:400px;}
+.minmax{margin:5px 0;}
+.minmax th{width:202px; text-align:right;color:#454545;padding-right:7px;}
+.thcenter th{text-align:center;padding:0;width:85px;}
+.datagrid3,.opfleet_grid{height:350px;}
+
+/*----------------------------------purchase order  -------------------------------*/	
+.readyship_radio{padding:7px 0 7px 210px;}
+.readyship_radio label{padding-right:20px;padding-left:2px;}
+
+/*-----------------------------------------------footer----------------------------------------------*/
+#footer{clear:both;	color:#666666;	width:100%;	text-align:center;	padding-top:5px;  }
+
+/*------------------------------------------paging style--------------------------------------------*/	
+.cuspage{padding-left:27px;	}
+.custable{width:96%; 	height:200px; 	padding:0 13px;	}
+.pagdatagrid{height:400px;	}
+.pagination{
+	background:url(../../javascript/dojo16/dojox/grid/resources/images/header_shadow.png) repeat-x scroll center bottom #E5EDF4;
+	background-color: #EAF1F6;
+	height:20px;
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding:2px 0;
+	} 
+.pagination_left{float:left;padding:3px 0 0 5px;width:300px;height:14px;overflow:hidden;	}
+.pagination_right{text-align:right;	}
+.paginationbt{
+	float:right;
+	background:url(../images/sprite_icons.png) no-repeat scroll 0 0 transparent;
+	height:12px !important;
+	margin-top:5px;
+	width:12px !important;
+	}
+.firstbt{background-position:-57px 3px;	margin-left:1px;cursor:pointer;	}
+.firstDisablebt{background-position:-57px -17px;margin-left:1px;	}	
+.prevbt{background-position:3px 3px;margin:5px 2px 0 9px;cursor:pointer;	}
+.prevDisablebt{	background-position:3px -17px;	margin:5px 2px 0 9px;	}		
+.nextbt{background-position:-17px 3px;	margin-left:3px;cursor:pointer;	}
+.nextDisablebt{	background-position:-17px -17px;margin-left:3px;	}	
+.lastbt{background-position:-37px 3px;	margin:5px 9px 0;	cursor:pointer;	}
+.lastDisablebt{	background-position:-37px -17px;margin:5px 9px 0;}
+.currentpage{color:#000;float:right;font-weight:bold;margin:3px 0px 0 5px;	display: inline;}
+.total{	font-weight:normal;	margin-right:5px;	}
+.numitem{float:right;margin:3px 10px 0 0;	}
+.display{float:right;margin-right:13px;	display: inline;line-height:40px;	}	
+.sl .display .dijitTextBox {width:50px;	}
+.sl .display .dijitSelect .dijitButtonContents{width:40px;}
+.sl .numinput .dijitTextBox .dijitInputField,.sl .numinput .dijitInputInner,.sl .numinput .dijitTextBox{width:20px;height:15px;text-align:center;  padding:0; 	}
+.dj_gecko .sl .numinput .dijitTextBox .dijitInputInner,.dj_webkit .sl .numinput .dijitTextBox .dijitInputInner{	padding:0;	}
+
+/*--------------------------------------dojo---------------------------------------------*/
+.sl .dijitComboButton .dijitStretch{	width:45px;	}
+.sl .short .dijitTextBox{width:78px;	}
+.sl .current_tab .dijitButton .dijitButtonNode,.sl .shortbutton .dijitButton .dijitButtonNode,
+.sl #btarea .dijitButton .dijitButtonNode,.sl #btarea2 .dijitButton .dijitButtonNode{	min-width:60px;   }
+.sl .searchbt .dijitButton .dijitButtonNode{ width:45px; }
+.sl .gosearch .dijitButton .dijitButtonNode{ width:20px;	}
+.sl .longbutton .dijitButton .dijitButtonNode{ width:100px;}
+.sl .activebt .dijitButton .dijitButtonNode{	background-image:url(../images/activebt.png);color:#FFFFFF;	border:1px solid #366ba4;	}
+.sl .passivebt .dijitButton .dijitButtonNode{background-image:url(../images/passivebt.png);color:#FFFFFF;border:1px solid #3d3d3d;    }
+
+ /*-------------dojo.form.select---------------------------*/
+.sl .dijitSelect .dijitArrowButton{width:16px;   height:16px;    }
+.sl .dijitSelect .dijitButtonContents{width:160px;}
+.sl .short .dijitSelect .dijitButtonContents {width:80px;	}
+/*----------------------dojox.form.CheckedMultiSelect-----------------------*/
+.sl .dojoxMultiSelect {width:400px;border:1px solid #b5bcc7;	background-color:#FFF;    }
+.sl .pub .dojoxMultiSelect{height:60px;	}	
+.sl .user_info .dojoxMultiSelect{ width:300px;}
+
+/*---------------------------------------------icon buttons--------------------------------------*/
+.classIcon{	background-repeat: no-repeat;  background-position: center center; width: 16px; height:16px; }
+.plusIcon{background-image:url(../images/addicon.png);}
+.editIcon{background-image:url(../images/editicon.png);	}
+.detailIcon{background-image:url(../images/deitalicon.png);	}
+.searchIcon{background-image:url(../images/saveicon.png);}
+.gosearchIcon{background-image:url(../images/searchicon.png);}	
+.sortIcon{background-image:url(../images/sorticon.png);	}
+.exportIcon{background-image:url(../images/exporticon.png);	}
+.custoIcon{background-image:url(../images/customizeicon.png);}
+.deleteIcon{background-image:url(../images/deleteicon.png);	}
+.sl .dropiconbt .dijitDropDownButton .dijitButtonNode, .sl .iconbt .dijitButton .dijitButtonNode{
+	background-image:url(../images/passive_icon.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+    padding:1px;
+	border:1px solid #98B5D0;
+	}
+.sl .dropiconbt .dijitDropDownButton .dijitButtonNode{background-position:left center;padding:1px 1.5px 1px 1.5px;}
+.sl .dropiconbt .dijitArrowButtonInner{background:none;width:0;	height:0;	}
+.sl .iconbt .dijitDropDownButtonHover .dijitButtonNode,.sl .iconbt .dijitDropDownButtonActive .dijitButtonNode,
+.sl .iconbt .dijitButtonActive .dijitButtonNode,.sl .iconbt .dijitButtonHover .dijitButtonNode{
+	background-image:url(../images/activeicon.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	border:1px solid #666;
+	}
+.sl .dropiconbt .dijitDropDownButtonHover .dijitButtonNode,.sl .dropiconbt .dijitDropDownButtonActive .dijitButtonNode{background-position:left center;}	
+	
+/**--------------------------???------------------------------------*/
+.confirm_fail_success{width:300px;	}
+.confirm_fail_success .main{	padding:10px 8px 0 25px;height:50px;background-color:#fff;	}
+.confirm_fail_success .main img{	vertical-align:middle; }
+.btarea{height:40px;background-color:#e9f1fa;border-top:#CCC 1px solid;	border-bottom:1px solid #ccc;	}
+.alert_bt{text-align:right; margin:5px 15px 0 0 ;	}
+.msg_success{width:22px;height:22px;background:url(../images/success32.gif) no-repeat;	}
+.msg_fail{width:22px;height:22px;background:url(../images/activity_fail.gif) no-repeat;	}
+.msg_confirm{width:22px;height:22px;background:url(../images/question_mark_dgm24.gif) no-repeat;}
+/*-----------------------------------------------welcome----------------------------------------------------*/
+#welcome{ margin:30px 40px 0 40px;}
+#welcome h1{	font-size:20px;	color:#00649D;font-family:SimHei,Microsoft YaHei,Arial;	}
+#welcome p label{	font-size:13px;	}
+.infoarea{height:528px;	margin:0 auto;	}
+.content1,.content2{background-color:#ffffff;border: 1px solid #769DC0;}
+.content1{float:left;margin-left:0px;	}
+.content2{float:right;margin-right:30px;}
+.bkg{padding:0 13px;}
+.bkg p{margin:0 0;}
+.content1 .bkg hr{border-top:1px dotted #769DC0;	}
+.bkg hr,.content1 hr,.content2 hr{  border:none;	border-top:2px solid #769DC0;height:0;	width:98%;	}
+.content1 hr,.content2 hr{border-top:2px solid #769DC0;	}
+.heading{font-size:16px;color:#00649D;font-family:SimHei,Microsoft YaHei,Arial;  padding: 5px 0 4px 3px;}
+.content1 label,.content2 label{display:inline-block;	margin-top:-17px;}
+.content1 label:before{content:url("../images/news.png");padding:0 10px 0 6px;	}
+.content2 label:before{content:url("../images/support.png");	padding:0 10px 0 6px;	}
+.content1 p:before,.content2 p:before{content:url("../images/list.png");	padding-right:5px;	}
+.doubleclickcell{color:#16497B;	}
+
+#contentOwn{margin:0 auto;width:70%;height:600px;background:url(../images/bg11.png);}
+#photo{float:left;;padding-top:50px;padding-left:20px;position:relative;}
+/*-------------------------------------------------welcome424-------------------------------------------*/
+/*contentOwn{margin:0 auto;width:80%;height:850px;background-color:#ffffff;}
+#leftBar{width:20%;height:100%;float:left;}
+#core{width:80%;height:100%;float:right;position:relative;}
+#photo{float:left;width:100%;height:55%;padding-top:10px; background:url(../images/bg11.png); position:relative;}
+#blankW{clear:both;width:100%;height:3%;}
+#blankW hr,#middle hr{height:4px;width:100%;background:url(../images/loadsmall.gif) repeat-x;border-left:url(../images/loadsmall.gif) repeat-y 2px;}
+#middle{width:100%;height:40%;position:relative;} 
+*/
+#ERPcontent1{
+	float:right;
+	position:absolute;
+	left:620px ;
+	top: 340px;
+	z-index:2;
+}
+#ERPcontent2{
+	float:right;
+	position:absolute;
+	left:600px ;
+	top: 380px;
+	z-index:2;
+}
+#ECcontent1{
+	float:left;
+	position:absolute;
+	left: 230px ;
+	top: 170px;
+	z-index:2;
+	}
+#ECcontent2{
+	float:left;
+	position:absolute;
+	left: 200px ;
+	top: 200px;
+	z-index:2;
+	}
+#Logcontent1{
+	float:right;
+	position:absolute;
+	left: 600px ;
+	top: 190px;
+	z-index:2;
+}
+#Logcontent2{
+	float:right;
+	position:absolute;
+	left: 620px ;
+	top: 210px;
+	z-index:2;
+}
+
+/*#mRight{float:right;}
+#rightBar{width:8%;float:right;height:100%;}*/
+
+/* #photo{border-top:0.5px solid #FFF;margin:0 auto;width:60%;height:450px;padding-left:110px;background-color:#eeeeee;border:1px blue solid;}
+ #ppt{float:right;}  */
+
+/*-------------------------------------------------tips-------------------------------------------*/
+#org_cont table{	width:100%;	}
+#org_cont th{text-align:right;}
+#org_cont td{padding:5px 0;}
+
+/*---*/
+.actip{border-collapse:collapse;background-color:#fff;}
+.actip th{
+    border-color:#BCBCBC;
+    border-width:1px;
+	border-style:solid;
+	background: -moz-linear-gradient(top, #EDF2F7, #D0DFEA);
+	background: -webkit-gradient(linear, left top, left bottom, from(#EDF2F7), to(#D0DFEA));
+    background: url("../images/header.png") #EDF2F7 repeat-x bottom;
+	height:21px;
+	padding:2px 5px;
+	}
+.actip td{border-color:#E5DAC8;	border-width:1px;	border-style:solid;	padding:2px 5px;	}
+.aclabel{line-height:25px;}
+
+/*------------------------------------------------dashboard------------------------------------------------------*/
+.topframe{background-color:#e4e4e4;border-bottom:1px solid #bcbcbc;padding:5px 0;height:75px;padding-left:10px;}
+.dashselect{float:left;width:300px; }
+.topframe .searcher{padding-left:15px;}
+.topframe .searcher th{line-height:25px;}
+.dashsearch{width:650px;float:left;}
+.content3{border-top:1px solid #FFF;  }
+.dashboard_con{width:945px;background-color:#FFF;margin:8px auto 0; height:355px;border:1px solid #B5BCC7;padding:10px 20px;}
+.search_base{width:985px;margin:8px auto 0;}
+.left_grid{float:left; margin-top:20px; width:480px;}
+.right_board{ width:420px; float:right;margin-left:30px;border:1px solid #B5BCC7;}
+.right_board .title{text-align:center;height:30px;line-height:30px;font-size:15px;}
+.right_board .title:before{content:none;}
+/*------------------------------------------------edit account------------------------------------------------------*/
+.stepinfo{width:1000px;margin:0 auto;border:1px solid #bcbcbc;border-bottom:none;height:530px;}
+.stepheader{background-color:#d5e6f5;border-bottom:1px solid #769dc0;height:60px;}
+.stepheader p{margin:0;padding:7px 0 7px 20px;}
+.stepheader span{padding-right:7px;}
+.stepheader .f1,.stepheader .f2{color:#306FA8;font-family:Microsoft Yahei;}
+.f1{font-size:16px;}
+.f2{font-size:14px;}
+.stepcontent{background-color:#FFF;height:470px;padding-left:50px;}
+.stepbox{width:180px; float:left;padding:30px 20px;}
+.steptext{width:150px;float:right;line-height:20px;}
+.steptext a{color:#215A92;	text-decoration:none;font-size:14px;font-family:Microsoft YaHei;}
+.stepicon{background:url("../images/step.png") no-repeat; width:30px;height:30px;float:left;}
+.stepicon1{background-position:0px 0px;}
+.stepicon2{background-position:-30px 0px;}
+.stepicon3{background-position:-60px 0px;}
+.stepicon4{background-position:0px -30px;}
+.stepicon5{background-position:-30px -30px;}
+.stepicon6{background-position:-60px -30px;}
+.stepicon7{background-position:0px -60px;}
+.stepicon8{background-position:-30px -60px;}
+
+.dijitTree {	width:100%;	height:100%;}
+.search_margin{margin-top:24px;}
+.hideSubmitInput{display:block;overflow:hidden;position:absolute;width:0px;height:0px;border:0px;}
+/*-------------------------order_consolidate_workbenth---------------------------------*/
+.centerTitle{ text-align:center; height:15px}
+.consolidate_infoarea{ width:998px;	height:100%;overflow-y:auto;margin:0 auto;	border:1px solid #bcbcbc;border-bottom:none;padding-bottom:13px;}
+.consolidate_info {width:95%;	margin:0 auto;    }
+.consolidate_info th{text-align:right;padding-right:7px;	color:#454545;line-height:25px; width:8%;}
+.consolidate_info td{width:8%;}
+.ppx_stop_consolidate {width:500px;height:200px; padding-top:20px;	background-color:#eee;}
+/*---------------------------------------load builder------------------------------------*/
+.lb_common{ width:998px;height:100%;overflow-y:auto;margin:0 auto;	border:1px solid #bcbcbc;border-bottom:none;padding-bottom:13px;}
+/*-------------------tender_status------------------------------*/
+.tender_status_infoarea{ width:998px;height:100%;overflow-y:auto;margin:0 auto;	border:1px solid #bcbcbc;border-bottom:none;padding-bottom:13px;}
+.browseButton{width:80px;height:20px;margin:10px 0 2px 0;}

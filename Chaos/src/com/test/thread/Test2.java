@@ -1,0 +1,10 @@
+package com.test.thread;
+public class Test2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TestThread t = new TestThread();
+		t.aa("1");
+	}
+
+}

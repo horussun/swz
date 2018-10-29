@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<javaconf>
+		<propertiesfiles>
+			<conffile name="cas.properties" basedir="webcontent"
+				relatepath="/WEB-INF/" cursrcconffile="" confvm="/cas.properties.vm" />			
+		</propertiesfiles>
+		<xmlfiles>
+			<conffile name="memcached.xml" basedir="javasource"
+				relatepath="/" cursrcconffile="" confvm="/memcached.xml.vm" />
+			<conffile name="log4j.xml" basedir="javasource"
+				relatepath="/" cursrcconffile="" confvm="/log4j.xml.vm" />
+		</xmlfiles>
+	</javaconf>
+	<ibossconf>
+		<propertiesfiles></propertiesfiles>
+		<xmlfiles></xmlfiles>
+	</ibossconf>
+	<webservice>
+		<propertiesfiles></propertiesfiles>
+		<xmlfiles></xmlfiles>
+	</webservice>
+</configuration>

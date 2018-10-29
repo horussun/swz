@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="usage" basedir=".">
+
+	<!-- =================================================================== -->
+	<!-- 初始化目标                                               					 -->
+	<!-- =================================================================== -->
+	<target name="init">
+		<tstamp />
+		<!-- 属性文件加载 -->
+		<property file="${basedir}/build.properties" />
+		<!-- 输出环境信息 -->
+		<echo message="---------- ${Name} ${version} [${year}] ------------" />
+		<echo message="----JAVA_HOME:		${java.home} ------------------" />
+		<echo message="----AppServer lib	:${appserverhomelib} -------------" />
+
+		<!-- JDK环境包 -->
+		<path id="classpath.jdk">
+			<fileset dir="${java.home}/lib">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+		<!-- 应用服务器公用包 -->
+		<path id="classpath.appserver">
+			<fileset dir="${appserverhomelib}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+
+		<!-- 应用服务器共享包 -->
+		<path id="classpath.appShareLib">
+			<fileset dir="${appShareLib}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+		<!-- 当前工程包 -->
+		<path id="classpath.curAppLib">
+			<fileset dir="${build.src.lib.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+		<!-- 当前工程classes -->
+		<path id="classpath.curAppClass">
+			<fileset dir="${build.dest.class}">
+				<include name="**/*.class"/>
+			</fileset>
+		</path>		
+		<!-- 整个ClassPath依赖情况 -->
+		<path id="classpath.all">
+			<path refid="classpath.jdk" />
+			<path refid="classpath.appserver" />
+			<path refid="classpath.appShareLib"/>
+			<path refid="classpath.curAppLib" />
+			<path refid="classpath.curAppClass" />
+		</path>
+
+		<!-- 基本设置 -->
+		<filter token="year" value="${year}" />
+		<filter token="version" value="${version}" />
+		<filter token="date" value="${TODAY}" />
+		<filter token="log" value="true" />
+		<filter token="verbose" value="true" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Help on usage    帮助信息                                                   -->
+	<!-- =================================================================== -->
+	<target name="usage" depends="init">
+		<echo message="-------------------------------------------------------------" />
+		<echo message="" />
+		<echo message=" 有效的目标   列表:" />
+		<echo message="" />
+		<echo message="   jar      --> 打包生成 ${name}.jar 文件" />
+		<echo message="   build    --> 编译并且复制原文件" />
+		<echo message="   javadoc  --> 生成 API 帮助文档" />
+		<echo message="   clean    --> 清理构建垃圾" />
+		<echo message="   war      --> 打成WAR包" />
+		<echo message="   deploy   --> 部署到应用服务器" />
+		<echo message="" />
+		<echo message=" 请选择上面的这些功能，你可以轻松地构建，终于可以让你爽一把了哦！" />
+		<echo message="" />
+		<echo message=" 如果你要详细地查看当前的目标，请查看build.xml文件，这里很清晰哦！" />
+		<echo message="-------------------------------------------------------------" />
+		<echo message="" />
+		<echo message="" />
+	</target>
+	<!-- =================================================================== -->
+	<!-- 生成配置文件					                                         -->
+	<!-- =================================================================== -->
+	<target name="auto_conf" depends="prepare-src">
+		<java fork="true" classname="com.olymtech.app.deploy.AutoConfig">
+			<arg value="${auto_config_path_by_env}/${auto_config_file_by_env}"/> 
+			<arg value="${build.src.javasource}"/>
+			<arg value="${build.src.webcontent}"/>
+			<arg value="${build.src.autoconf.vmpath}"/>
+			<arg value="${build.src.webcontent}/WEB-INF/auto_conf/curappconf.xml"/>
+		    <classpath refid="classpath.all"/>
+		</java>	
+	</target>
+	
+	<!-- =================================================================== -->
+	<!-- 在构建目标任务之前准备一些基本的任务设置                                         -->
+	<!-- =================================================================== -->
+	<target name="prepare-src" depends="init">
+		<!-- 生成一些构建基本目录 -->
+		<mkdir dir="${build.src.javasource}" />
+		<mkdir dir="${build.src.webcontent}" />
+		<mkdir dir="${build.dest.class}" />
+		<mkdir dir="${build.dest.lib.dir}" />
+
+		<!-- 从源代码那里复制JavaSource到构建源 JavaSource -->
+		<copy todir="${build.src.javasource}">
+			<fileset dir="${src.javasource.dir}" />
+		</copy>
+		<!-- 从Web内容那里复制Web资源到构建源 Web路径 -->
+		<copy todir="${build.src.webcontent}">
+			<fileset dir="${src.webcontent.dir}" />
+		</copy>
+		<!-- 删除从Web内容复制过来的class-->
+		<delete dir="${build.src.class}" />
+		<!-- 重新建立构建编译的类路径-->
+		<mkdir dir="${build.src.class}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- 构建工程资源						                                     -->
+	<!-- =================================================================== -->
+	<target name="build" depends="prepare-src,auto_conf">
+		<echo message="构建工程资源开始" />
+		<!-- 复制构建源Web内容到目标Web路径 -->
+		<copy todir="${build.dest.webcontent}">
+			<fileset dir="${build.src.webcontent}" />
+		</copy>
+
+		<!-- 编译构建源的JavaSource到目标classes，依赖环境变量 -->
+		<javac srcdir="${build.src.javasource}" destdir="${build.src.class}"
+			debug="${debug}" optimize="${optimize}" encoding="UTF-8">
+			<classpath refid="classpath.all" />
+		</javac>
+
+		<!-- 复制除了Java文件之外的所有资源文件到目标classes目录 -->
+		<copy todir="${build.src.class}">
+			<fileset dir="${build.src.javasource}" >
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>		
+
+		<!-- 复制编译后的构建源class到目标 -->
+		<copy todir="${build.dest.class}">
+			<fileset dir="${build.src.class}"/>
+		</copy>			
+		<echo message="构建工程资源结束" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- 根据打包jar文件      				                                     -->
+	<!-- =================================================================== -->
+	<target name="jar" depends="build">
+		<echo message="jar开始" />
+		<jar jarfile="${build.dest.lib.dir}/${name}.jar" basedir="${build.src.class}" includes="**" />
+		<echo message="jar结束" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- 生成Java API 文档				                                     -->
+	<!-- =================================================================== -->
+	<target name="javadoc" depends="build">
+		<echo message="文档生成开始" />
+		<mkdir dir="${build.dest.javadocs}" />
+		<javadoc packagenames="${build.javadocs.packages}" sourcepath="${build.src.javasource}" destdir="${build.dest.javadocs}" author="true" version="true" use="true" splitindex="true" windowtitle="${Name} API" doctitle="${Name}">
+			<classpath refid="classpath.all" />
+		</javadoc>
+		<echo message="文档生成结束" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- 清除垃圾			                                                     -->
+	<!-- =================================================================== -->
+	<target name="clean" depends="init">
+		<echo message="清除开始" />
+		<delete dir="${build.base.dir}" />
+		<echo message="清除结束" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- 执行除了打包发布外的所有操作                                                    -->
+	<!-- =================================================================== -->
+	<target name="all" depends="usage,init,prepare-src,build" description="make all task." />
+
+	<!-- =================================================================== -->
+	<!-- 打包成WAR		                                                     -->
+	<!-- =================================================================== -->
+	<target name="war" depends="all">
+		<echo message="打包(war)开始" />
+		<war destfile="${build.base.dir}/${warname}" webxml="${build.dest.webcontent}/WEB-INF/web.xml">
+			<fileset dir="${build.dest.webcontent}"/>
+			<classes dir="${build.dest.class}" />
+			<webinf dir="${build.dest.webcontent}/WEB-INF">
+				<include name="*.*" />
+			</webinf>
+		</war>
+		<echo message="打包(war)结束" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- 部署到对应的应用服务器发布目录                                                  -->
+	<!-- =================================================================== -->
+	<target name="deploy" depends="war">
+		<echo message="部署开始" />
+		<!-- 只作上一次部署文件的备份-->
+		<delete dir="${appserverhome_deploy_backup_path}/${warname}-${TODAY}" />
+		<mkdir dir="${appserverhome_deploy_backup_path}/${warname}-${TODAY}" />
+		<mkdir dir="${appserverhome_deploypath}/${warname}" />
+		<!-- 先备份上次发布的文件，然后备份原来的应用-->
+		<copy todir="${appserverhome_deploy_backup_path}/${warname}-${TODAY}">
+			<fileset dir="${appserverhome_deploypath}/${warname}" />
+		</copy>		
+		<delete dir="${appserverhome_deploypath}/${warname}" />
+		<mkdir dir="${appserverhome_deploypath}/${warname}" />
+		<!-- 现在没有把war包部署，是因为iBoss还没有解决路径问题，实际上war已经生成了     -->
+		<copy todir="${appserverhome_deploypath}/${warname}">
+			<fileset dir="${build.dest.webcontent}" />
+		</copy>		
+		<echo message="部署结束" />
+	</target>
+	
+</project>

@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*---------------确定、错误、成功提示框部分-----------------------------------*/
+
+.confirm_fail_success{
+	width:300px;
+	}
+.confirm_fail_success .main{
+	padding:10px 8px;
+	width:284px;
+	height:70px;
+	background-color:#fff;
+   text-align:center;
+	}
+.confirm_fail_success .main img{
+	vertical-align:middle;
+	 }
+	 
+.btarea{
+	height:40px;
+	background-color:#e9f1fa;
+	border-top:#CCC 1px solid;
+	border-bottom:1px solid #ccc;
+	}
+.alert_bt{
+	text-align:center;
+	margin:5px  0;
+	}
